@@ -1,3 +1,7 @@
+/*
+ * @LastEditTime: 2020-06-23 15:54:31
+ * @LastEditors: jinxiaojian
+ */ 
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import "./SnapshotSample.css";
@@ -31,12 +35,12 @@ export default class SnapshotSample extends PureComponent {
     return this.rootNode.scrollHeight;
   }
 
-  // componentDidUpdate(prevProps, prevState, prevScrollHeight) {
-  //   const scrollTop = this.rootNode.scrollTop;
-  //   if (scrollTop < 5) return;
-  //   this.rootNode.scrollTop =
-  //     scrollTop + (this.rootNode.scrollHeight - prevScrollHeight);
-  // }
+  componentDidUpdate(prevProps, prevState, prevScrollHeight) {
+    const scrollTop = this.rootNode.scrollTop;
+    if (scrollTop < 5) return;
+    this.rootNode.scrollTop =
+      scrollTop + (this.rootNode.scrollHeight - prevScrollHeight);
+  }
 
   render() {
     return (
